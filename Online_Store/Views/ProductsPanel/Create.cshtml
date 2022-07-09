@@ -1,0 +1,56 @@
+﻿
+@model Online_Store.Models.Product
+@{
+    ViewData["Title"] = "Create";
+}
+
+<form method="post" asp-action="Create">
+    <div class="border-bottom p-3">
+        <div class="form-group row">
+            <h2 class="text-black-50 p1-3">Add Product</h2>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group row">
+                    <div class="col-4">
+                        <label asp-for="Name"></label>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="Prize"></label>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="Quantity"></label>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-4">
+                        <input class="form-control" asp-for="Name" />
+                        <span class="text-danger" asp-validation-for="Name"></span>
+                    </div>
+                    <div class="col-4">
+                        <input class="form-control" asp-for="Prize" />
+                        <span class="text-danger" asp-validation-for="Prize"></span>
+                    </div>
+                    <div class="col-4">
+                        <input class="form-control" asp-for="Quantity" />
+                        <span class="text-danger" asp-validation-for="Quantity"></span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-12 offset-2 row">
+                        <div class="col">
+                            <button type="sumbit" class="btn btn-info w-70">Create</button>
+                        </div>
+                        <div class="col">
+                            <a class="btn btn-danger w-70" asp-action="Index">Back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts{
+    @{ <partial name="_ValidationScriptsPartial" />}
+}
